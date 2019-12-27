@@ -22,5 +22,6 @@ EC2InstanceType=$EC2_INSTANCE_TYPE
 if [ $? -eq 0 ]; then
 aws cloudformation list-exports \
     --profile awsbootstrap \
+    --region $REGION \
     --query "Exports[?Name=='InstanceEndpoint'].Value"
 fi
